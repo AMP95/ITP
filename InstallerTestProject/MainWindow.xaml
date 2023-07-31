@@ -23,6 +23,7 @@
             />
         <Button 
             Margin="20,10,20,0"
-            Content="Save"/>
+            Content="Save"
+            Command="{Binding Click}"/>
     </StackPanel>
 </Window>
