@@ -7,17 +7,13 @@
         mc:Ignorable="d"
         Title="InstallerTestProject" Height="200" Width="200">
     <StackPanel>
-        <TextBlock>
-            <Run Text="Version "/>
-            <Run Text=""/>
-        </TextBlock>
-        <TextBlock>
-            <Run Text="Updates "/>
-            <Run/>
-        </TextBlock>
+        <TextBlock x:Name="vers"/>
+        <TextBlock x:Name="upg"/>
         <Button
+            x:Name="btn"
             Margin="20"
-            Content="Update"/>
+            Content="Update"
+            Click="UpdateButton_Click"/>
         <TextBox
             Margin="20,0,20,0"
             />

@@ -31,8 +31,6 @@ namespace InstallerTestProject
     {
         public event PropertyChangedEventHandler? PropertyChanged;
         string _input;
-        string _version;
-        string _update;
         public string Input{
             get => _input;
             set {
@@ -40,29 +38,9 @@ namespace InstallerTestProject
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Input)));
             }
         }
-        public string Version
-        {
-            get => _version;
-            set
-            {
-                _version = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Version)));
-            }
-        }
-        public string Update
-        {
-            get => _update;
-            set
-            {
-                _update = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Update)));
-            }
-        }
         public VM()
         {
             Input = Settings1.Default.inputText;
-            Version = "";
-            Update = "";
             
         }
         public Command Click
