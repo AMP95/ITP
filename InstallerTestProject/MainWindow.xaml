@@ -15,6 +15,7 @@
             Content="Update"
             Click="UpdateButton_Click"/>
         <TextBox
+            Text="{Binding Input}"
             Margin="20,0,20,0"
             />
         <Button 
