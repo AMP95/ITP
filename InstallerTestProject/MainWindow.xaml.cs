@@ -34,7 +34,7 @@ namespace InstallerTestProject
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             manager = await UpdateManager
-                .GitHubUpdateManager(@"https://github.com/AMP95/ITP.git");
+                .GitHubUpdateManager(@"https://github.com/AMP95/ITP");
 
             vers.Text = manager.CurrentlyInstalledVersion().ToString();
 
