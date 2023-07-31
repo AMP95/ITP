@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:InstallerTestProject"
         mc:Ignorable="d"
         Title="InstallerTestProject" Height="200" Width="200">
+    <Window.DataContext>
+        <local:VM/>
+    </Window.DataContext>
     <StackPanel>
         <TextBlock x:Name="vers"/>
         <TextBlock x:Name="upg"/>
