@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Printing;
 using System.Text;
@@ -38,9 +39,24 @@ namespace InstallerTestProject
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Input)));
             }
         }
+        string dir;
         public VM()
         {
-            Input = Settings1.Default.inputText;
+            dir = Directory.GetCurrentDirectory();
+            if (!File.Exists(dir + "//1.txt"))
+            {
+                Write("default");
+                Input = "default";
+            }
+            else {
+                using (FileStream file = File.OpenRead(dir + "//1.txt"))
+                {
+                    using (StreamReader writer = new StreamReader(file))
+                    {
+                        Input = writer.ReadLine();
+                    }
+                }
+            }
             
         }
         public Command Click
@@ -50,6 +66,14 @@ namespace InstallerTestProject
                     Settings1.Default.inputText = Input;
                     Settings1.Default.Save();
                 });
+            }
+        }
+        private void Write(string input) {
+            using (FileStream file = File.OpenWrite(dir + "//1.txt")) {
+                using (StreamWriter writer = new StreamWriter(file)) {
+                    writer.WriteLine(input);
+                    writer.Flush();
+                }
             }
         }
     }
