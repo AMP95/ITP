@@ -32,6 +32,14 @@ namespace InstallerTestProject
     {
         public event PropertyChangedEventHandler? PropertyChanged;
         string _input;
+        public string Direct {
+            get => dir;
+            set
+            {
+                dir = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Direct)));
+            }
+        }
         public string Input{
             get => _input;
             set {
@@ -42,7 +50,7 @@ namespace InstallerTestProject
         string dir;
         public VM()
         {
-            dir = Directory.GetCurrentDirectory();
+            Direct = Directory.GetCurrentDirectory();
             if (!File.Exists(dir + "//1.txt"))
             {
                 Write("default");
