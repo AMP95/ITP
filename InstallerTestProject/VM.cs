@@ -71,8 +71,7 @@ namespace InstallerTestProject
         {
             get {
                 return new Command(() => {
-                    Settings1.Default.inputText = Input;
-                    Settings1.Default.Save();
+                    Write(Input);
                 });
             }
         }
