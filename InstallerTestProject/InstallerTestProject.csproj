@@ -8,30 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Settings1.settings" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="NuGet.CommandLine" Version="6.6.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="squirrel.windows" Version="1.9.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Settings1.settings">
-      <Generator>PublicSettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
-    </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Settings1.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings1.settings</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <PropertyGroup>
